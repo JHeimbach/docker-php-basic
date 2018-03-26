@@ -12,3 +12,5 @@ Uses the following extensions
  
 ## php.ini
 use the php.ini file to configure php.
+
+There is also the build-arg `PHP_INI` to point to a other php.ini
