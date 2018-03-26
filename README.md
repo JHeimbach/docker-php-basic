@@ -1,4 +1,5 @@
 # Basic PHP (Dev) Docker container
+PHP-fpm with mcrypt, gdlib, pdo_mysql, json, opcache and zip extensions
 
 Uses the following extensions
  - mcrypt
