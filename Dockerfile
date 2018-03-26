@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y \
 		libfreetype6-dev \
 		libjpeg62-turbo-dev \
 		libmcrypt-dev \
-		libpng12-dev \
+		libpng-dev \
 		ca-certificates \
 		curl \
 		git \
@@ -14,4 +14,6 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install -j$(nproc) gd \
 	&& docker-php-ext-install pdo_mysql json opcache zip
 
-COPY ./php.ini /usr/local/etc/php/php.ini
+ARG PHP_INI=./php.ini
+
+COPY $PHP_INI ${PHP_INI_DIR}/php.ini
