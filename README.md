@@ -7,6 +7,7 @@ Uses the following extensions
  - zip
  - json
  - pdo_mysql
+ - mysqli
  - opcache
  
  
