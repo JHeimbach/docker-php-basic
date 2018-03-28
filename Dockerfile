@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install -j$(nproc) gd \
 	&& docker-php-ext-install pdo_mysql json opcache zip
 
+RUN sed -ri 's/^www-data:x:33:33:/www-data:x:1000:100:/' /etc/passwd
+
 ARG PHP_INI=./php.ini
 ARG PHP_CONF_FILE=$PHP_INI_DIR/php.ini
 
