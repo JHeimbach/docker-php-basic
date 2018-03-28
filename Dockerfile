@@ -8,11 +8,11 @@ RUN apt-get update && apt-get install -y \
 		ca-certificates \
 		curl \
 		git \
-	&& rm -rf /var/lib/apt/lists/* \
-	&& docker-php-ext-install -j$(nproc) mcrypt \
-	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 	&& docker-php-ext-install -j$(nproc) gd \
-	&& docker-php-ext-install pdo_mysql json opcache zip
+	&& docker-php-ext-install pdo_mysql json opcache zip mysqli
 
 RUN sed -ri 's/^www-data:x:33:33:/www-data:x:1000:100:/' /etc/passwd
 
