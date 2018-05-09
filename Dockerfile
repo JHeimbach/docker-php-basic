@@ -1,5 +1,7 @@
 FROM php:7.2-fpm
 
+WORKDIR /var/www
+
 RUN apt-get update && apt-get install -y \
 		libfreetype6-dev \
 		libjpeg62-turbo-dev \
