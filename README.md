@@ -14,9 +14,9 @@ Uses the following extensions
 ## Settings
 ### PHP version
 The following Version are supported:
- - 7.0
  - 7.1
  - 7.2
+ - 7.3 (tag:latest)
 
 ### Env_vars
 Use these Variables for the following Settings:
